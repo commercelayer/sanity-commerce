@@ -13,13 +13,13 @@ npm install sanity-plugin-sanity-commerce
 Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
-import {defineConfig} from 'sanity'
-import {myPlugin} from 'sanity-plugin-sanity-commerce'
+import { defineConfig } from 'sanity';
+import { myPlugin } from 'sanity-plugin-sanity-commerce';
 
 export default defineConfig({
   //...
   plugins: [myPlugin({})],
-})
+});
 ```
 
 ## License
