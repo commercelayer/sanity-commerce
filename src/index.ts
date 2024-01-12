@@ -1,16 +1,14 @@
 import { definePlugin } from 'sanity';
-import schemaTypes from './schemas';
+import getSchema, { Config } from './schema';
 
-interface SanityCommerceConfig {
-  /* nothing here yet */
-}
+type SanityCommerceConfig = Config | void;
 
 export const sanityCommerce = definePlugin<SanityCommerceConfig | void>(
-  (config = {}) => {
+  (config) => {
     return {
-      name: 'sanity-plugin-sanity-commerce',
+      name: 'sanity-plugin-commerce',
       schema: {
-        types: schemaTypes,
+        types: getSchema(config || {}),
       },
     };
   },

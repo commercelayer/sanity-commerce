@@ -1,5 +1,5 @@
 {
-  "name": "sanity-plugin-sanity-commerce",
+  "name": "sanity-plugin-commerce",
   "version": "1.0.0",
   "description": "Create and manage a product catalogue within Sanity",
   "keywords": [
