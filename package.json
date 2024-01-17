@@ -1,5 +1,5 @@
 {
-  "name": "sanity-plugin-commerce",
+  "name": "@commercelayer/sanity-plugin-commerce",
   "version": "1.0.0",
   "description": "Create and manage a product catalogue within Sanity",
   "keywords": [
@@ -7,7 +7,13 @@
     "sanity-plugin"
   ],
   "license": "MIT",
-  "author": "Commerce Layer <alex@commercelayer.io>",
+  "author": {
+    "name": "Alex Canessa",
+    "email": "alex@commercelayer.io"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

@@ -18,7 +18,7 @@ Traditionally, product catalogs and commerce engines are closely tied together, 
 ## Installation
 
 ```sh
-npm install sanity-plugin-sanity-commerce
+npm install @commercelayer/sanity-plugin-commerce
 ```
 
 ## Usage
@@ -27,9 +27,12 @@ Configure the plugin in your `sanity.config.ts` file. Here’s an example config
 
 ```typescript
 import { defineConfig } from 'sanity';
-import { sanityCommerce } from 'sanity-plugin-commerce';
+import {
+  sanityCommerce,
+  SanityCommercePluginConfig,
+} from '@commercelayer/sanity-plugin-commerce';
 
-const sanityCommerceConfig = {
+const sanityCommerceConfig: SanityCommercePluginConfig = {
   // ...configure the plugin here.
 };
 
