@@ -9,6 +9,20 @@ export type Config = {
   variantAttributes?: FieldDefinition[];
 };
 
+const getAttributes = (
+  defaultAttributes: Record<string, FieldDefinition>,
+  customAttributes: FieldDefinition[],
+): FieldDefinition[] => {
+  return Object.values(
+    customAttributes.reduce((carry, field) => {
+      return {
+        ...carry,
+        [field.name]: field,
+      };
+    }, defaultAttributes),
+  );
+};
+
 const getSchema = ({
   productLabel = 'Product',
   variantLabel = 'Variant',
@@ -75,35 +89,55 @@ const getSchema = ({
     name: 'product',
     title: productLabel,
     type: 'document',
-    fields: [
-      { name: 'name', title: 'Name', type: 'string' },
-      { name: 'description', title: 'Description', type: 'text' },
-      ...productAttributes,
+    fields: getAttributes(
       {
-        name: 'variants',
-        title: 'Variants',
-        type: 'array',
-        of: [{ type: 'reference', to: [{ type: 'variant' }] }],
+        name: { name: 'name', title: 'Name', type: 'string' },
+        description: {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        },
+        variants: {
+          name: 'variants',
+          title: 'Variants',
+          type: 'array',
+          of: [{ type: 'reference', to: [{ type: 'variant' }] }],
+        },
       },
-    ],
+      productAttributes,
+    ),
   });
 
   const variant = defineType({
     name: 'variant',
     title: variantLabel,
     type: 'document',
-    fields: [
-      { name: 'name', title: 'Name', type: 'string' },
-      { name: 'description', title: 'Description', type: 'text' },
-      { name: 'sku', title: 'SKU', type: 'string' },
+    fields: getAttributes(
       {
-        name: 'imageUrls',
-        title: 'Image URLs',
-        type: 'array',
-        of: [{ type: 'url' }],
+        name: {
+          name: 'name',
+          title: 'Name',
+          type: 'string',
+        },
+        description: {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        },
+        sku: {
+          name: 'sku',
+          title: 'SKU',
+          type: 'string',
+        },
+        images: {
+          name: 'images',
+          title: 'Images',
+          type: 'array',
+          of: [{ type: 'image' }],
+        },
       },
-      ...variantAttributes,
-    ],
+      variantAttributes,
+    ),
   });
 
   return [catalog, taxonomy, taxon, product, variant];

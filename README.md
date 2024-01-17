@@ -44,6 +44,8 @@ export default defineConfig({
 
 ### Configuration Options
 
+For product and variant attributes, there are some fields already preconfigured. Using field names that already exist will **override** the default content model. It is highly recommended to check the result of the content model before adding custom extensions.
+
 The Sanity Commerce Plugin offers flexible configuration to adapt to your specific e-commerce needs. Below is a table summarizing the configuration options:
 
 | Option              | Type                | Description                                                | Example                                      |
@@ -92,10 +94,6 @@ export default defineConfig({
 
 This configuration allows you to tailor the plugin to best fit your product catalog and editorial workflow.
 
-## License
-
-This plugin is released under the [MIT License](LICENSE) © Commerce Layer.
-
 ## Develop & test
 
 This plugin uses [@sanity/plugin-kit](https://github.com/sanity-io/plugin-kit)
@@ -106,7 +104,7 @@ on how to run this plugin with hotreload in the studio.
 
 ## License
 
-[MIT](LICENSE) © Commerce Layer
+This plugin is released under the [MIT License](LICENSE) © Commerce Layer.
 
 ### Release new version
 
