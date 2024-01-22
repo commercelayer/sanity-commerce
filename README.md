@@ -1,6 +1,6 @@
-> This is a **Sanity Studio v3** plugin.
-
 # Sanity Commerce by Commerce Layer
+
+**This is a **Sanity Studio v3** plugin.**
 
 > The Sanity Commerce Plugin is designed to seamlessly integrate e-commerce functionalities into Sanity CMS. Focused on simplifying content management for e-commerce platforms, this plugin allows you to manage your product catalog directly within Sanity, leveraging the power and flexibility of headless commerce.
 
