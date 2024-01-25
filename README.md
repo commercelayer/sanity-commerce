@@ -1,6 +1,7 @@
 # Sanity Commerce by Commerce Layer
 
-![Sanity Commerce by Commerce Layer](/assets//header.png)
+![Sanity Commerce by Commerce Layer](/assets//header.png#gh-light-mode-only)
+![Sanity Commerce by Commerce Layer](/assets//header-dark.png#gh-dark-mode-only)
 
 > This is a **Sanity Studio v3** plugin.
 
