@@ -114,6 +114,7 @@ jobs:
         with:
           cache: npm
           node-version: lts/*
+      - run: npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
       - run: npm clean-install
       - run: npm audit signatures
         # Branches that will release new versions are defined in .releaserc.json
