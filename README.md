@@ -45,6 +45,20 @@ export default defineConfig({
 });
 ```
 
+## Core Concepts
+
+- Catalog: A catalog is a collection of products, often tailored for different markets or seasons. It acts as a container for your product offerings, allowing for organization and easy management within a specific context.
+- Taxonomy: A taxonomy is a hierarchical system for classifying and organizing content. It is used to group products into broad categories, such as 'Clothing' or 'Electronics', which can then be broken down into more specific subcategories.
+- Taxon: A taxon is an individual category within a taxonomy. Taxons can be nested, allowing you to create a detailed structure for product classification.
+- Product: A product represents an individual item for sale. It is the core of your e-commerce catalog and can be associated with multiple variants.
+- Variant: A variant is a specific version of a product, which might differ in size, color, or other attributes. Each variant is a unique combination of these attributes and is typically associated with a unique SKU.
+
+## Relationships and Hierarchy
+
+- Products are linked to Variants, which define the different purchasable versions of a product.
+- Taxonomies organize Taxons into a hierarchical structure, providing a framework for - categorizing products.
+- Catalogs group products and their related taxonomies to present a curated collection to the end-user.
+
 ### Configuration Options
 
 For product and variant attributes, there are some fields already preconfigured. Using field names that already exist will **override** the default content model. It is highly recommended to check the result of the content model before adding custom extensions.
