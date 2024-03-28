@@ -1,3 +1,8 @@
+import { BiCheckboxSquare } from 'react-icons/bi';
+import { ImUngroup } from 'react-icons/im';
+import { SlGlobeAlt } from 'react-icons/sl';
+import { TfiShoppingCartFull } from 'react-icons/tfi';
+import { VscTypeHierarchySub } from 'react-icons/vsc';
 import { defineType, FieldDefinition } from 'sanity';
 
 export type Config = {
@@ -30,13 +35,14 @@ const getSchema = ({
   taxonLabel = 'Taxon',
   productAttributes = [],
   variantAttributes = [],
-}: Config): any[] => {
+}: Config): unknown[] => {
   const catalog = defineType({
     name: 'catalog',
     title: 'Catalog',
     description:
       'Represents a collection of products, typically grouped under specific taxonomies for organizational purposes. A catalog is used to present a curated selection of products, often tailored for specific markets, seasons, or themes. It references taxonomies to leverage the established hierarchical structure for product categorization.',
     type: 'document',
+    icon: SlGlobeAlt,
     fields: [
       {
         name: 'name',
@@ -71,6 +77,7 @@ const getSchema = ({
     description:
       'Represents the overall categorization system used to organize products. A taxonomy is a hierarchical structure comprising various taxons. This content type defines the broad categories and their relationships, serving as a framework for the classification of products.',
     type: 'document',
+    icon: ImUngroup,
     fields: [
       {
         name: 'name',
@@ -105,6 +112,7 @@ const getSchema = ({
     description:
       'Represents individual categories or subcategories within a taxonomy. Taxons help in organizing products into hierarchical structures, making it easier to navigate and find products. A taxon can reference other taxons, allowing for nested categorization, and can also link to specific products that fall under it.',
     type: 'document',
+    icon: BiCheckboxSquare,
     fields: [
       {
         name: 'name',
@@ -145,6 +153,7 @@ const getSchema = ({
     description:
       'Represents a general product offering that can have multiple variants. This content type includes basic product information such as the product name and description. It also references the various variants of the product, allowing for a comprehensive view of all available options.',
     type: 'document',
+    icon: TfiShoppingCartFull,
     fields: getAttributes(
       {
         name: {
@@ -182,6 +191,7 @@ const getSchema = ({
     description:
       'Represents a specific variant of a product. Variants are typically different versions of a product, differentiated by attributes like size, color, or other specifications. Each variant has a unique SKU for inventory tracking and may have its own set of images.',
     type: 'document',
+    icon: VscTypeHierarchySub,
     fields: getAttributes(
       {
         name: {
